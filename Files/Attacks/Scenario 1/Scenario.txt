@@ -1,0 +1,29 @@
+Phase 1 (Networking Scanning)
+
+nmap -sS -sV -O 192.168.4.128
+
+=================================
+
+Phase 2 (Domain Enumration - Collect Inforamtion About Website)
+
+dirsearch -u http://192.168.4.128/ -w /usr/share/wordlists/dirb/common.txt
+
+Then get a robot.txt file and extract information from the file (Domain name and User Authenticaion)
+
+==================================
+
+Phase 3 (Collect Info from ouer-team page)
+
+http://192.168.4.128/our-team.php
+http://192.168.4.128/robots.txt
+
+any try to make relation between Phase 2 and Phase 3
+
+==================================
+
+Phase 4 (Bruteforce Attack)
+
+http://192.168.4.128/api/v1/auth/login.php
+
+User Burp Suite Tool to make a brute force on login page API
+
